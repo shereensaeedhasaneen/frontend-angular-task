@@ -1,0 +1,185 @@
+<br><br>
+<div class="container">
+
+<form class="mb-5">
+    <div class="form-row justify-content-center">
+        <div class="form-group col-md-3 col-sm-5 my-1">
+            <div class="input-group search-hm">
+                <input #searchlearn type="text" class="form-control search-hm"
+                    id="inlineFormInputGroupUsername"
+                    placeholder="what would do you want to learn ? " autocomplete="off"
+                    required>
+            </div>
+
+        </div>
+        
+        <div class="pl-md-0 col-md-3 col-sm-5 my-1">
+            <select id="drpdwn-hm" class="form-control" name="location" required (change)="oncityChangesearch($event.target.value)">
+                <option value="Choose one or more city" disabled selected hidden>Choose one city or more</option>
+                <option *ngFor="let item of uniqueCityArr" value="{{item}}">{{item}}</option>
+            </select>
+        </div>
+
+        
+   
+        <div class="col-md-2 col-sm-2 my-1">
+            <button id="search-btn" type="submit" class="btn btn-danger" (click)="search()">
+            Search</button>
+        </div>
+    </div>
+</form>
+</div>
+<br><br>
+
+<!-------------------------------------------->
+<div class="container">
+    <div class="row">
+<!-------------------- Left Side --------------------->
+        <div class="col-lg-4 mb-3 mr-4 p-4 bg-white shadow leftSide">
+   <!------------------first section ------------->
+            <h5 class="mb-3">City</h5>
+            <select class="form-control mb-3 shadow" (change)="onChange($event.target.value)" > <!--[(ngModel)]="selected">-->
+                <option value="Choose one or more city" disabled selected hidden>Choose one city or more</option>
+                <option *ngFor="let item of uniqueCityArr" value="{{item}}">{{item}}</option>
+            </select>
+    <!--------------- second section ------------------------------->
+            <div class="ml-3 paragraphs">
+             <p>lille  <i class="fas fa-times"></i></p>
+             <p>lyon  <i class="fas fa-times"></i></p> 
+             <p>clermont ferrand  <i class="fas fa-times"></i></p>
+            </div>
+            
+
+    <!-------------- third section -------------------------->
+    
+    <h5 class="mb-3">Programs</h5>
+  <div class="pl-2 radio-container">
+    <div class="form-check"><!--selected-->
+        <label class="form-check-label">
+          <input value="Bachelor" id="programs" (click)="chooseprogram($event.target.defaultValue)" type="radio" class="form-check-input" name="programs" checked>Bachelor
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input value="Master" id="programs" (click)="chooseprogram($event.target.defaultValue)" type="radio" class="form-check-input" name="programs">Master
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input  value="MBA" id="programs" (click)="chooseprogram($event.target.defaultValue)" type="radio" class="form-check-input" name="programs">MBA
+        </label>
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label">
+          <input  value="BHD" id="programs" (click)="chooseprogram($event.target.defaultValue)" type="radio" class="form-check-input" name="programs">BHD
+        </label>
+      </div>
+     
+    </div>
+<br>
+<!-------------------- third section-------------------------->
+        <h5 class="mb-3">Field</h5>
+        <select class="form-control mb-3 shadow" (change)="onChangefield($event.target.value)">
+            <option value="" disabled selected hidden>Choose one field or more</option>
+            <option *ngFor="let item of uniqueFieldArr" value="{{item}}">{{item}}</option>
+        </select>
+
+        <div class="ml-3 paragraphs">
+        <p>art, design and architecture  <i class="fas fa-times"></i></p>
+        <p>Social science  <i class="fas fa-times"></i></p> 
+        </div>
+        
+
+    <!------------------------------------------------->
+    <h5 class="mb-3">School</h5>
+    <select class="form-control mb-3 shadow" (change)="onChangeschool($event.target.value)">
+        <option value="" disabled selected hidden>Choose one school or more</option>
+        <option *ngFor="let item of uniqueSchoolArr" >{{item}}</option>
+    </select>
+
+    <div class="ml-3 paragraphs">
+    <p>cy tech  <i class="fas fa-times"></i></p>
+    </div>
+   
+
+    <!-----------------------language ----------------------->
+    <h5 class="mb-3">Language</h5>
+    <div class="pl-2 radio-container">
+      <div class="form-check">
+          <label class="form-check-label">
+            <input value="All" id="language" (click)="chooselanguage($event.target.defaultValue)" type="radio" class="form-check-input" name="language" checked>All
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input value="English" id="language" (click)="chooselanguage($event.target.defaultValue)" type="radio" class="form-check-input" name="language">English
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input value="French" id="language" (click)="chooselanguage($event.target.defaultValue)" type="radio" class="form-check-input" name="language">French
+          </label>
+        </div>
+  
+      </div>
+  <br>
+  <!------------Sort --------------------->
+  <h5 class="mb-3">Sort</h5>
+  <div class="pl-2 radio-container">
+    <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" checked>Price: low to high
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio">Price: high to low
+        </label>
+      </div>
+
+    </div>
+<br>
+<button  (click)="filter()" class="btn main_button">Filter</button>
+
+  
+</div>
+    <!------------- Right Side ---------------------------->
+        <div class="col-lg-7 pl-0 bg-white shadow rightSide">
+            <div class="child">
+              <div  *ngFor="let item of programs;let i=index">
+                <div class="row pt-4 pl-5 mr-0">
+                    <div class="col-2  mr-3 shadow mt-2 img-none" style="height: 100px;">
+                        <img src="assets/images/{{item.school}}.png" width="100%" height="70">
+                    </div>
+                    <div class="col-9">
+                        <h4>{{item.Name}}</h4>
+                        <h6>{{item.school}}</h6>
+                        
+
+                        <div class="row">
+                            <div class="col-sm-6 pt-3">
+                                <p style="color: gray;">Tuition Fee <span style="color:  #1C85C8;">{{item.fee}} per year</span> </p>
+                            </div>
+                            <div class="col-sm-3 pt-3 city">
+                                <p style="color: #1C85C8;">{{item.city}}</p>
+                            </div>
+                            <div class="col-sm-3">
+                                <button class="btn p-2" style="background-color: #1C85C8; color: white;">More info</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <hr>
+           </div>
+
+           <div *ngIf="programs.length==0">
+              <h2 class="text-center mt-5">No Data Exist !! </h2>
+           </div>
+            </div>        
+       </div>
+    </div>
+</div>
+

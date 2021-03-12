@@ -1,0 +1,61 @@
+
+#search-btn {
+	background-color: #1C85C8;
+	width: 100%;
+	height: 3.3rem;
+}
+
+
+#drpdwn-hm {
+	height: 3.3rem;
+	background-color: white;
+}
+
+.search-hm {
+	height: 3.3rem;
+}
+.search-hm:focus {
+	box-shadow: none;
+	border-color: #CCCCCC;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-dark .navbar-toggler {
+		background-color: #e5533a;
+	}
+
+	#intro:before {
+		height: 50rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#intro:before {
+		height: 60rem;
+	}
+}
+
+@media screen and (max-width: 992px) {
+
+	.ordr-online-chck {
+		display: block;
+	}
+}
+
+.my-1{
+    margin-right: 0 !important;
+    display: inline-block !important;
+}
+/*
+.txt2{
+    display: inline-block;
+    width: 30%;
+}
+.txt {
+    display: inline-block;
+    width: 30%;
+    margin:0;
+    box-sizing:border-box;
+
+}
+*/

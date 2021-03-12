@@ -1,0 +1,50 @@
+<br><br>
+<div class="container">
+
+<form class="mb-5">
+    <div class="form-row justify-content-center">
+        <div class="form-group col-md-3 col-sm-5 my-1">
+            <div class="input-group search-hm">
+                <input type="text" class="form-control search-hm"
+                    id="inlineFormInputGroupUsername"
+                    placeholder="what would do you want to learn ? " autocomplete="off"
+                    required>
+            </div>
+
+        </div>
+        
+        <div class="pl-md-0 col-md-3 col-sm-5 my-1">
+            <select id="drpdwn-hm" class="form-control" name="location" required>
+                <option value="Choose one or more city" disabled selected hidden>Choose one city or more</option>
+                <option *ngFor="let item of uniqueCityArr" value="{{item}}">{{item}}</option>
+            </select>
+        </div>
+
+        
+   
+        <div class="col-md-2 col-sm-2 my-1">
+            <button id="search-btn" type="submit" class="btn btn-danger">
+            Search</button>
+        </div>
+    </div>
+</form>
+</div>
+
+<!--<div class="container">
+    <div>
+        <input type="text" class=" txt form-control search-hm"
+                    id="inlineFormInputGroupUsername"
+                    placeholder="what would do you want to learn ? " autocomplete="off"
+                    required>
+
+                    <select formControlName="selectedBranch" id="drpdwn-hm"
+                    class="txt2 form-control" name="location" required>
+                    <option>
+                        {{branch}}
+                    </option>
+                </select>
+
+                    <button id="search-btn" type="submit" class="btn btn-danger">
+                        Search</button>
+    </div>
+</div>-->

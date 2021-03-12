@@ -1,0 +1,143 @@
+///////Search//////////////////////
+
+#search-btn {
+	background-color: #1C85C8;
+	width: 100%;
+	height: 3.3rem;
+}
+
+
+#drpdwn-hm {
+	height: 3.3rem;
+	background-color: white;
+}
+
+.search-hm {
+	height: 3.3rem;
+}
+.search-hm:focus {
+	box-shadow: none;
+	border-color: #CCCCCC;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-dark .navbar-toggler {
+		background-color: #e5533a;
+	}
+
+	#intro:before {
+		height: 50rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#intro:before {
+		height: 60rem;
+	}
+}
+
+@media screen and (max-width: 992px) {
+
+	.ordr-online-chck {
+		display: block;
+	}
+}
+
+.my-1{
+    margin-right: 0 !important;
+    display: inline-block !important;
+}
+/*
+.txt2{
+    display: inline-block;
+    width: 30%;
+}
+.txt {
+    display: inline-block;
+    width: 30%;
+    margin:0;
+    box-sizing:border-box;
+
+}
+*/
+
+//////////////////////////////////////
+.shadow{
+  //  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0 60px #000
+}
+.rightSide , .leftSide{
+    height: 920px;
+}
+.rightSide{
+   // overflow-y: scroll;
+    overflow: hidden;
+}
+.child {
+    height: 100%;
+    margin-right: -27px; /* Maximum width of scrollbar */
+    //padding-right: 50px; /* Maximum width of scrollbar */
+    overflow-y: scroll;
+  }
+
+h5{
+    color:rgb(129, 123, 123);
+}
+.paragraphs{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.paragraphs p{
+   // margin-left: 5px;
+    margin-right: 6px;
+    background-color: #F3F6FF;
+    padding: 4px;
+    color: gray;
+    font-size: 13px;
+}
+.paragraphs 
+{
+    p{
+        .fas{
+            font-size: 11px;
+            margin-left: 2px;
+        }
+    }
+}
+
+.radio-container{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:991px)//767px)
+{
+    .radio-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .radio-container .form-check{
+        margin-right: 40px !important;
+    }
+}
+
+.main_button{
+    background-color: #1C85C8;
+    color:white;
+    width:90px
+}
+
+@media (max-width:577px){
+    .leftSide,.rightSide{
+        margin-left: 15px;
+    }
+    .rightSide{
+        margin-right: 14px;
+    }
+    .img-none {
+        display: none;
+    }
+    .city{
+        padding-top: 2px !important;
+    }
+}
